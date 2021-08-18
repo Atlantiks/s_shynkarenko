@@ -20,7 +20,14 @@ public class FindAverageNumOfSeries {
             sum += storedValue;
         } while (sc.hasNextInt());
 
-        System.out.print(sum / allNumbers.size());
+        sc.close();
+
+        if (allNumbers.size() != 0) {
+            System.out.print(sum / allNumbers.size());
+        } else {
+            System.out.println("No integers were entered. Please restart.");
+        }
+
     }
 
 
