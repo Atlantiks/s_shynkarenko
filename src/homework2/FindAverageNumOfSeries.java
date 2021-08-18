@@ -1,12 +1,8 @@
 package homework2;
 
-import jdk.swing.interop.SwingInterOpUtils;
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Stream;
 
 public class FindAverageNumOfSeries {
     public static void main(String[] args) {
