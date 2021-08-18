@@ -15,9 +15,13 @@ public class FindAverageNumOfSeries {
         int storedValue;
 
         do {
-            storedValue = sc.nextInt();
-            allNumbers.add(storedValue);
-            sum += storedValue;
+            try {
+                storedValue = sc.nextInt();
+                allNumbers.add(storedValue);
+                sum += storedValue;
+            } catch (Exception e) {
+
+            }
         } while (sc.hasNextInt());
 
         sc.close();

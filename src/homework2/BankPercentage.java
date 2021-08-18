@@ -42,8 +42,10 @@ public class BankPercentage {
                 sc.next();
             }
         } while (termInYears == 0);
-        long income;
 
+        sc.close();
+
+        long income;
         double coff = (1 + interestRate);
 
         System.out.println("====================================");
