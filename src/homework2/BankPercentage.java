@@ -3,6 +3,8 @@ package homework2;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+// some comments..
+
 public class BankPercentage {
     public static void main(String[] args) {
 
