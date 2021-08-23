@@ -13,6 +13,8 @@ public class FindAverageNum {
         primaryNum = sc.nextInt();
         secondaryNum = sc.nextInt();
 
+        sc.close();
+
         double averageNum = (primaryNum + secondaryNum) / 2.0;
 
         System.out.println(averageNum);
