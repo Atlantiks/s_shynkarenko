@@ -1,6 +1,7 @@
 package homework2;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -19,8 +20,8 @@ public class FindAverageNumOfSeries {
                 storedValue = sc.nextInt();
                 allNumbers.add(storedValue);
                 sum += storedValue;
-            } catch (Exception e) {
-
+            } catch (InputMismatchException e) {
+                System.out.println("Incorrect value entered!");
             }
         } while (sc.hasNextInt());
 
