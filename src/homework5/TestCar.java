@@ -6,7 +6,7 @@ public class TestCar {
         int distanceOdessaKiev = 478;
         double distanceOdessaKrivoeOzero = 178.5;
         double distanceOdessaZhashkov = 328.1;
-        double gasPrice = 27.3;
+        double gasPrice = 30.97;
         double totalCost = 0.0;
 
         distances[0] = distanceOdessaKrivoeOzero;
@@ -15,20 +15,19 @@ public class TestCar {
 
         Car mitsubishiGalant = new Car(60.0,5,9);
 
-        totalCost += gasPrice * mitsubishiGalant.requiredToRefillToFullCapacity();
-        mitsubishiGalant.refillFuelTankToFullCapacity();
 
-        for (int i = 0; i < 2; i++) {
-            mitsubishiGalant.fuelRetainedCoveringDistance(distances[i]);
+        for (int i = 0; i < 3; i++) {
             totalCost += gasPrice * mitsubishiGalant.requiredToRefillToFullCapacity();
             mitsubishiGalant.refillFuelTankToFullCapacity();
+            mitsubishiGalant.fuelRetainedCoveringDistance(distances[i]);
+            System.out.println("................................................");
+            System.out.println("Distance of " + distances[i] + " km was covered.");
         }
-        mitsubishiGalant.fuelRetainedCoveringDistance(distances[2]);
+
 
         System.out.println("======================================");
         System.out.println(totalCost + " UAH spent for refuelling.");
-
-        System.out.println(mitsubishiGalant.requiredToRefillToFullCapacity() + " l of fuel retained in a tank.");
+        System.out.println(mitsubishiGalant.fuelRetainedCoveringDistance(0) + " l of fuel retained in a tank.");
 
     }
 }

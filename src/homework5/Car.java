@@ -18,7 +18,6 @@ public class Car {
     }
 
     public double fuelRetainedCoveringDistance (double distance) {
-        System.out.println("Distance of " + distance + " km was covered.");
         fuelTankResidue -=  consumptionPer100km / 100 * distance;
         return fuelTankResidue;
     }
