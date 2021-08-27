@@ -13,7 +13,7 @@ public class Car {
 
     public void refillFuelTankToFullCapacity () {
         double volumeRefilled = fuelTankVolume - fuelTankResidue;
-        System.out.println(volumeRefilled + " l of gas filled into a fuel tank.\nTank has been refilled to 100% capacity.");
+        System.out.printf("%.1f l of gas filled into a fuel tank.\nTank has been refilled to 100%% capacity.", volumeRefilled);
         fuelTankResidue = fuelTankVolume;
     }
 
