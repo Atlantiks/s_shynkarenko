@@ -13,17 +13,18 @@ public class Car {
 
     public void refillFuelTankToFullCapacity () {
         double volumeRefilled = fuelTankVolume - fuelTankResidue;
-        System.out.println(volumeRefilled + " l of gas filled into a fuel tank.\n Tank has been filled to 100% capacity.");
+        System.out.println(volumeRefilled + " l of gas filled into a fuel tank.\nTank has been refilled to 100% capacity.");
         fuelTankResidue = fuelTankVolume;
     }
 
     public double fuelRetainedCoveringDistance (double distance) {
+        System.out.println("Distance of " + distance + " km was covered.");
         fuelTankResidue -=  consumptionPer100km / 100 * distance;
         return fuelTankResidue;
     }
 
-    public double requiredToRefillToFullCapacity (double distance) {
-        return fuelTankVolume - fuelRetainedCoveringDistance(distance);
+    public double requiredToRefillToFullCapacity () {
+        return fuelTankVolume - fuelTankResidue;
     }
 
 
