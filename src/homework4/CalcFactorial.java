@@ -1,4 +1,4 @@
-package homework3;
+package homework4;
 
 public class CalcFactorial {
     public static void main(String[] args) {
