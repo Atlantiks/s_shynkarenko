@@ -10,8 +10,6 @@ public class Domestic extends Animal {
         this.isVaccinated = isVaccinated;
     }
 
-
-
     public String getVoice() {
         return super.getVoice() + "my name is " + name + ".";
     }
