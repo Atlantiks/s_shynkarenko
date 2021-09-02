@@ -14,4 +14,8 @@ public class Animal {
         this.weight = weight;
         this.color = color;
     }
+
+    public String getVoice() {
+        return "Hello, ";
+    }
 }
