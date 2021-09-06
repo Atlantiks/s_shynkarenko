@@ -4,10 +4,10 @@ public class Animal {
     private static int counter = 0;
     private final int id;
     private int age;
-    private int weight;
+    private double weight;
     private String color;
 
-    public Animal(int age, int weight, String color) {
+    public Animal(int age, double weight, String color) {
         counter++;
         this.age = age;
         this.id = counter;
@@ -31,7 +31,7 @@ public class Animal {
         this.age = age;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 

@@ -9,6 +9,6 @@ public class GuideDog extends Dog {
     }
 
     public String getVoice() {
-        return isTrained ? super.getVoice() + "I can take you home" : super.getVoice();
+        return isTrained ? super.getVoice() + "I can take you home\n" : super.getVoice();
     }
 }
