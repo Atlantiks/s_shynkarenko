@@ -1,6 +1,7 @@
 package homework8;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Objects;
 
 public class MyStringCollectionImpl implements StringCollection {
@@ -80,7 +81,7 @@ public class MyStringCollectionImpl implements StringCollection {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(StringCollection o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MyStringCollectionImpl that = (MyStringCollectionImpl) o;
