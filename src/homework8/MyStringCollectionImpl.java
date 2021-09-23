@@ -36,7 +36,18 @@ public class MyStringCollectionImpl implements StringCollection {
 
     @Override
     public boolean add(int index, String str) {
-        return false;
+
+        String[] output = new String[data.length + 1];
+        for (int i = 0, j = 0; i < data.length; i++, j++) {
+            if (i != index) output[j] = data[i];
+            else {
+                output[j] = str;
+                i--;
+                index = 0;
+            }
+        }
+        data = output;
+        return true;
     }
 
     @Override

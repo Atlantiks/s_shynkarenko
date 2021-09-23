@@ -7,15 +7,17 @@ public class Main {
 
         MyStringCollectionImpl test = new MyStringCollectionImpl(sample);
         StringCollection test2 = new MyStringCollectionImpl(sample2);
-        test.add("four");
+        //test.add("four");
+        //test.add("four");
         test.add("five");
+        test.add(1,"check");
 
         System.out.println(test.get(3));
         System.out.println(test.size());
         //System.out.println(test.equals(test2));
 
         System.out.println(test.contains("four"));
-        test.delete("four");
+        //test.delete("four");
         test.print();
         System.out.println(test.equals(test2));
         test.clear();
