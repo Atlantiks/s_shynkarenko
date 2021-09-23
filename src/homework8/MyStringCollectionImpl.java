@@ -81,8 +81,8 @@ public class MyStringCollectionImpl implements StringCollection {
     @Override
     public boolean equals(StringCollection collection) {
         MyStringCollectionImpl alfa = (MyStringCollectionImpl)collection;
-        for (String x : alfa.data) {
-            if (!contains(x)) return false;
+        for (String x : this.data) {
+            if (!alfa.contains(x)) return false;
         }
         return true;
 
