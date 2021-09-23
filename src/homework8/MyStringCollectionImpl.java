@@ -43,7 +43,7 @@ public class MyStringCollectionImpl implements StringCollection {
             else {
                 output[j] = str;
                 i--;
-                index = 0;
+                index = -1;
             }
         }
         data = output;
