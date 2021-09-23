@@ -36,8 +36,8 @@ public class MyStringCollectionImpl implements StringCollection {
 
     @Override
     public boolean add(int index, String str) {
-
         String[] output = new String[data.length + 1];
+
         for (int i = 0, j = 0; i < data.length; i++, j++) {
             if (i != index) output[j] = data[i];
             else {
@@ -56,6 +56,7 @@ public class MyStringCollectionImpl implements StringCollection {
 
         String[] output = new String[data.length - 1];
         int index = 0;
+
         for (String x : data) {
             if (x == null) continue;
             if (!x.equals(str)) output[index++] = x;
