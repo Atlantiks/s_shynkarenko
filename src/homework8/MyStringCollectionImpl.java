@@ -27,6 +27,7 @@ public class MyStringCollectionImpl implements StringCollection {
     @Override
     public boolean add(String str) {
         String[] output = new String[data.length + 1];
+
         System.arraycopy(data, 0, output, 0, data.length);
         output[output.length - 1] = str;
         data = output;
@@ -37,6 +38,8 @@ public class MyStringCollectionImpl implements StringCollection {
     @Override
     public boolean add(int index, String str) {
         String[] output = new String[data.length + 1];
+
+        if (index < 0 || index > data.length) return false;
 
         for (int i = 0, j = 0; i < data.length; i++, j++) {
             if (i != index) output[j] = data[i];
@@ -68,7 +71,7 @@ public class MyStringCollectionImpl implements StringCollection {
 
     @Override
     public boolean contains(String str) {
-        for (String x : data) {
+        for (String x : this.data) {
             if (x == null) continue;
             if (x.equals(str)) return true;
         }
@@ -94,7 +97,12 @@ public class MyStringCollectionImpl implements StringCollection {
 
     @Override
     public int size() {
-        return index;
+        return data.length;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(data);
     }
 
     public void print() {

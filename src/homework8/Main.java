@@ -2,24 +2,45 @@ package homework8;
 
 public class Main {
     public static void main(String[] args) {
-        String[] sample = {"one","two","three","four"};
+        String[] sample = {"three","four"};
         String[] sample2 = {"one","three","five"};
 
-        MyStringCollectionImpl test = new MyStringCollectionImpl(sample);
-        StringCollection test2 = new MyStringCollectionImpl(sample2);
-        //test.add("four");
-        //test.add("four");
-        test.add("five");
-        test.add(1,"check");
+        MyStringCollectionImpl test = new MyStringCollectionImpl();
 
-        System.out.println(test.get(3));
-        System.out.println(test.size());
-        //System.out.println(test.equals(test2));
+        assert (test.size() == 0);
+        assert (test.add("one"));
+        assert (test.add("two"));
+        System.out.println(test);
+        assert (test.get(0).equals("one"));
+        assert (test.get(1).equals("two"));
 
-        System.out.println(test.contains("four"));
-        //test.delete("four");
-        test.print();
-        System.out.println(test.equals(test2));
-        test.clear();
+        // Check contains element
+        assert (test.contains("one"));
+        assert (!test.contains("three"));
+
+        // Check delete element by value
+        assert (test.delete("two"));
+        assert (!test.delete("two"));
+        assert (test.size() == 1);
+
+        // Check add element by index
+        assert (test.add("four"));
+        assert (!test.add(10, "five"));
+        assert (test.add(1, "five"));
+        assert (test.get(0).equals("one"));
+        assert (test.get(1).equals("five"));
+        assert (test.get(2).equals("four"));
+        assert (test.delete("four"));
+
+        // Check equals
+        MyStringCollectionImpl test2 = new MyStringCollectionImpl();
+        assert (test2.add("one"));
+        assert (test2.add("five"));
+        assert (test2.equals(test));
+        assert (test2.add("ten"));
+        System.out.println(test2.equals(test));
+        //assert (!test2.equals(test));
+
+
     }
 }
