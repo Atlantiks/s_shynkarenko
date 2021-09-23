@@ -2,8 +2,6 @@ package homework8;
 
 public class Main {
     public static void main(String[] args) {
-        String[] sample = {"three","four"};
-        String[] sample2 = {"one","three","five"};
 
         MyStringCollectionImpl test = new MyStringCollectionImpl();
 
@@ -38,8 +36,13 @@ public class Main {
         assert (test2.add("five"));
         assert (test2.equals(test));
         assert (test2.add("ten"));
-        System.out.println(test2.equals(test));
-        //assert (!test2.equals(test));
+        assert (!test.equals(test2));
+
+        // Check clear
+        assert (test.clear());
+        assert (!test.contains("Some value"));
+        assert (!test.delete("Some value"));
+        assert (test.size() == 0);
 
 
     }
