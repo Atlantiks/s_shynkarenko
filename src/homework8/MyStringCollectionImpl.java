@@ -1,6 +1,8 @@
 package homework8;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Objects;
 
 public class MyStringCollectionImpl implements StringCollection {
     private String[] data;
@@ -79,13 +81,18 @@ public class MyStringCollectionImpl implements StringCollection {
     }
 
     @Override
-    public boolean equals(StringCollection collection) {
-        MyStringCollectionImpl alfa = (MyStringCollectionImpl)collection;
-        for (String x : alfa.data) {
-            if (!contains(x)) return false;
-        }
-        return true;
+    public boolean equals(StringCollection o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MyStringCollectionImpl that = (MyStringCollectionImpl) o;
+        return Arrays.equals(data, that.data);
+    }
 
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(index);
+        result = 31 * result + Arrays.hashCode(data);
+        return result;
     }
 
     @Override
