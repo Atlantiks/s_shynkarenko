@@ -20,6 +20,7 @@ public class MyLinkedList implements CustomCollection {
             Node previous = lastNode;
             lastNode = new Node(value, previous, firstNode);
             previous.next = lastNode;
+            firstNode.previous=lastNode;
         }
         size++;
         return true;
