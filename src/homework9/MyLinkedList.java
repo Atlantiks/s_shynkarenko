@@ -14,11 +14,11 @@ public class MyLinkedList implements CustomCollection {
     @Override
     public boolean add(String value) {
         if (size == 0) {
-            firstNode = new Node(value,null);
+            firstNode = new Node(value,null, null);
             lastNode = firstNode;
         } else {
             Node previous = lastNode;
-            lastNode = new Node(value, null);
+            lastNode = new Node(value, previous, firstNode);
             previous.next = lastNode;
         }
         size++;
