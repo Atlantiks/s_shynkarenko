@@ -69,18 +69,6 @@ public class MyLinkedList implements CustomCollection {
     @Override
     public boolean delete(String str) {
         if (size == 0 || !contains(str)) return false;
-        if (contains(str)) {
-            if (size == 1) clear();
-            if (size == 2) {
-                if (firstNode.actual.equals(str)) firstNode = lastNode;
-                else lastNode = firstNode;
-
-                firstNode.next = null;
-                firstNode.previous = null;
-                size = 1;
-            }
-            return true;
-        }
 
         int successfulCounter = 0;
         Node currentNode = firstNode;
@@ -93,7 +81,11 @@ public class MyLinkedList implements CustomCollection {
                 nextNode.previous = previousNode;
                 successfulCounter++;
             }
+            currentNode = nextNode;
+            nextNode = currentNode.next;
+            previousNode = currentNode.previous;
         }
+        size -= successfulCounter;
 
         return successfulCounter != 0;
     }
