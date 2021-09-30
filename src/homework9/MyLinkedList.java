@@ -11,6 +11,11 @@ public class MyLinkedList implements CustomCollection {
         clear();
     }
 
+    public MyLinkedList(String[] strArray) {
+        clear();
+        addAll(strArray);
+    }
+
     @Override
     public boolean add(String value) {
         if (size == 0) {
@@ -44,6 +49,10 @@ public class MyLinkedList implements CustomCollection {
     public boolean delete(int index) {
         if (index == 0) {
             firstNode = firstNode.next;
+            lastNode.next = firstNode;
+        } else if (index < 0 || index > size - 1) {
+            System.out.println("Index out of collection size bounds");
+            return false;
         } else {
             Node previousNode = firstNode;
             Node followingNode = firstNode.next;
@@ -94,6 +103,14 @@ public class MyLinkedList implements CustomCollection {
 
     @Override
     public boolean contains(String str) {
+        if (size == 0) return false;
+        Node currentNode = firstNode;
+
+        do {
+            if (currentNode.actual.equals(str)) return true;
+            currentNode = currentNode.next;
+        } while (currentNode != lastNode);
+
         return false;
     }
 
@@ -113,7 +130,7 @@ public class MyLinkedList implements CustomCollection {
 
     @Override
     public boolean trim() {
-        return false;
+        return true;
     }
 
     @Override
