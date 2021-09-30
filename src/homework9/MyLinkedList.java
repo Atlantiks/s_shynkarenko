@@ -1,7 +1,5 @@
 package homework9;
 
-import java.util.Collection;
-
 public class MyLinkedList implements CustomCollection {
     Node firstNode;
     Node lastNode;
@@ -134,7 +132,7 @@ public class MyLinkedList implements CustomCollection {
     }
 
     @Override
-    public boolean equals(Collection coll) {
+    public boolean equals(CustomCollection coll) {
         return false;
     }
 }
