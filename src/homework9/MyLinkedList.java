@@ -17,7 +17,7 @@ public class MyLinkedList implements CustomCollection {
     @Override
     public boolean add(String value) {
         if (size == 0) {
-            firstNode = new Node(value,null, null);
+            firstNode = new Node(value, null, null);
             lastNode = firstNode;
         } else {
             Node previous = lastNode;
@@ -68,29 +68,25 @@ public class MyLinkedList implements CustomCollection {
 
     @Override
     public boolean delete(String str) {
-        int successfulCounter = 0;
+        if (size == 0 || !contains(str)) return false;
+        if (contains(str)) {
+            if (size == 1) clear();
+            if (size == 2) {
+                if (firstNode.actual.equals(str)) firstNode = lastNode;
+                else lastNode = firstNode;
 
-        if (firstNode.actual.equals(str)) {
-            firstNode = firstNode.next;
-            firstNode.previous = lastNode;
-            successfulCounter++;
+                firstNode.next = null;
+                firstNode.previous = null;
+                size = 1;
+            }
+            return true;
         }
+
+        int successfulCounter = 0;
         Node currentNode = firstNode;
-        Node previousNode = firstNode.previous;
+        Node previousNode = lastNode;
         Node nextNode = firstNode.next;
 
-        for (int i = 0; i < size; i++) {
-            if (currentNode.actual.equals(str)) {
-                previousNode.next = nextNode;
-                nextNode.previous = previousNode;
-                successfulCounter++;
-            }
-            currentNode = currentNode.next;
-            previousNode = currentNode.previous;
-            nextNode = currentNode.next;
-        }
-
-        size -= successfulCounter;
         return successfulCounter != 0;
     }
 
@@ -115,14 +111,14 @@ public class MyLinkedList implements CustomCollection {
     @Override
     public boolean contains(String str) {
         if (size == 0) return false;
+
         Node currentNode = firstNode;
 
         do {
             if (currentNode.actual.equals(str)) return true;
             currentNode = currentNode.next;
         } while (currentNode != lastNode);
-
-        return false;
+        return currentNode.actual.equals(str);
     }
 
     @Override
