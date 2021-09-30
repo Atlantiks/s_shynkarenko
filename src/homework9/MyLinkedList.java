@@ -96,7 +96,20 @@ public class MyLinkedList implements CustomCollection {
 
     @Override
     public String get(int index) {
-        return null;
+        if (index < 0 || index > size - 1) {
+            System.out.println("Index out of collection size bounds");
+            return "";
+        }
+
+        Node currentNode = firstNode;
+        Node nextNode = firstNode.next;
+
+        for (int i = 0; i <= index; i++) {
+            if (i == index) return currentNode.actual;
+            currentNode = nextNode;
+            nextNode = currentNode.next;
+        }
+        return "";
     }
 
     @Override
