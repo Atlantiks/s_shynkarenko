@@ -72,11 +72,13 @@ public class MyLinkedList implements CustomCollection {
 
         int successfulCounter = 0;
         Node currentNode = firstNode;
-        Node previousNode = lastNode;
+        Node previousNode = firstNode.previous;
         Node nextNode = firstNode.next;
 
         for (int i = 0; i < size; i++) {
             if (currentNode.actual.equals(str)) {
+                if (currentNode == firstNode) firstNode = nextNode;
+                if (currentNode == lastNode) lastNode = previousNode;
                 previousNode.next = nextNode;
                 nextNode.previous = previousNode;
                 successfulCounter++;
@@ -111,7 +113,6 @@ public class MyLinkedList implements CustomCollection {
     @Override
     public boolean contains(String str) {
         if (size == 0) return false;
-        if (size == 1) return firstNode.actual.equals(str);
 
         Node currentNode = firstNode;
 
