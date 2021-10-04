@@ -148,13 +148,13 @@ public class MyLinkedList implements CustomCollection {
         if (other.size() != this.size) {
             return false;
         } else {
-            if (size == 0) return true;
+            if (this.size == 0) return true;
             Node currentNode = firstNode;
             Node nextNode = firstNode.next;
             Node otherNode = other.firstNode;
             Node otherNextNode = other.firstNode.next;
             for (int i = 0; i < this.size; i++) {
-                if (currentNode != otherNode) {
+                if (!currentNode.actual.equals(otherNode.actual)) {
                     return false;
                 } else {
                     currentNode = nextNode;
