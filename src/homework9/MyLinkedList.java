@@ -1,5 +1,7 @@
 package homework9;
 
+import java.util.Collection;
+
 public class MyLinkedList implements CustomCollection {
     Node firstNode;
     Node lastNode;
@@ -152,7 +154,16 @@ public class MyLinkedList implements CustomCollection {
     }
 
     @Override
-    public boolean equals(CustomCollection coll) {
+    public boolean equals(Collection coll) {
+        try {
+            return compared((MyLinkedList) coll);
+        } catch (ClassCastException e) {
+            System.out.println("Incompatible types");
+        }
+        return false;
+    }
+
+    private boolean compared(CustomCollection coll) {
         MyLinkedList other = (MyLinkedList) coll;
         if (other.size() != this.size) {
             return false;

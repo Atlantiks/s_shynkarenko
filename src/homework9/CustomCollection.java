@@ -23,5 +23,5 @@ public interface CustomCollection {
 
     boolean trim();
 
-    boolean equals(CustomCollection coll);
+    boolean equals(Collection coll);
 }
