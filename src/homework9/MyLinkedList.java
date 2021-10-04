@@ -40,7 +40,16 @@ public class MyLinkedList implements CustomCollection {
 
     @Override
     public boolean addAll(CustomCollection strColl) {
-        return false;
+        MyLinkedList otherColl = (MyLinkedList) strColl;
+        Node currentNode = otherColl.firstNode;
+        Node nextNode = otherColl.firstNode.next;
+
+        for (int i = 0; i < strColl.size(); i++) {
+            add(currentNode.actual);
+            currentNode = nextNode;
+            nextNode = currentNode.next;
+        }
+        return true;
     }
 
     @Override
