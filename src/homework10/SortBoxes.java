@@ -13,8 +13,8 @@ public class SortBoxes {
         for (int i = 0; i < 100; i++) {
             int length = (int)(Math.random() * 500);
             int depth = (int)(Math.random() * 500);
-            int height = (int)(Math.random() * 500);;
-            double weight = (int)(Math.random() * 500);;
+            int height = (int)(Math.random() * 500);
+            double weight = (int)(Math.random() * 500);
             allBoxes.add(new Box(length, depth, height, weight));
         }
 
