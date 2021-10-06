@@ -18,13 +18,12 @@ public class SortBoxes {
             allBoxes.add(new Box(length, depth, height, weight));
         }
 
-        System.out.println(allBoxes.size());
-        System.out.println(heavyBoxes.size());
+        System.out.println("Всего коробок до перемещения в исходной коллекции: " + allBoxes.size());
         repositionHeavyBoxes(allBoxes);
-        System.out.println(allBoxes.size());
-        System.out.println(heavyBoxes.size());
+        System.out.println("Всего коробок после перемещения в исходной коллекции: " + allBoxes.size());
+        System.out.println("Всего больших коробок после перемещения: " + heavyBoxes.size());
         for (int i = 0; i < heavyBoxes.size(); i++) {
-            System.out.println(heavyBoxes.get(i).weight);
+            System.out.println("Вес коробки " + (i + 1) + " составляет " + heavyBoxes.get(i).weight + " гр.");
         }
 
     }
