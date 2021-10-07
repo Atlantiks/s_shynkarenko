@@ -7,10 +7,11 @@ public class WordRepeatsCounterInText {
     public static void main(String[] args) {
         Map<String,Integer> allWordsCount = countRepeats(
                 "При сдаче после 11 октября от максимального балла будет отниматься штраф за просрочку.");
-        allWordsCount.forEach((key, value) -> System.out.println("Слово : " + key + "  встречается " + value + " раз"));
+        allWordsCount.forEach((key, value) -> System.out.println("Слово : \"" + key + "\"  встречается " + value + " раз"));
     }
 
     public static  Map<String,Integer> countRepeats(String text) {
+        if (text == null) return new LinkedHashMap<String,Integer>();
         String[] words = text.split(" ");
         Map<String,Integer> allWordsCount = new LinkedHashMap<>();
 
