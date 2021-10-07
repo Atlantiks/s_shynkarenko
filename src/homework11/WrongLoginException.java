@@ -1,9 +1,9 @@
 package homework11;
 
-public class WrongLoginException extends Exception {
+public class WrongLoginException extends RuntimeException{
 
     WrongLoginException(String message) {
-        throw new RuntimeException(message);
+        super(message);
     }
 
     WrongLoginException() {

@@ -86,7 +86,7 @@ public class MyLinkedList implements CustomCollection {
         Node previousNode = firstNode.previous;
         Node nextNode = firstNode.next;
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 1; i <= size; i++) {
             if (currentNode.actual.equals(str)) {
                 if (currentNode == firstNode) firstNode = nextNode;
                 if (currentNode == lastNode) lastNode = previousNode;

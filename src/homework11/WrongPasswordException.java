@@ -1,9 +1,9 @@
 package homework11;
 
-public class WrongPasswordException extends Exception {
+public class WrongPasswordException extends RuntimeException {
 
     WrongPasswordException(String message) {
-        throw new RuntimeException(message);
+        super(message);
     }
 
     WrongPasswordException() {
