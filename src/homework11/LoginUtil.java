@@ -16,10 +16,9 @@ public class LoginUtil {
         try {
             isLoginValid(login);
             isPasswordValid(password);
-        } catch (WrongLoginException e) {
-            System.out.println("Login failed");
-        } catch (WrongPasswordException p) {
-            System.out.println("Password failed");
+        } catch (WrongLoginException | WrongPasswordException e) {
+            System.out.println(e.getMessage());
+            System.exit(0);
         }
         if (loginData.containsKey(login)) {
             return password.equals(loginData.get(login));
