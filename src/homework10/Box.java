@@ -1,8 +1,6 @@
 package homework10;
 
-import lombok.Data;
 
-@Data
 
 public class Box {
     int length;
