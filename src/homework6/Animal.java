@@ -1,6 +1,8 @@
 package homework6;
 
-public class Animal {
+import homework6.AnimalActions.MakeVoice;
+
+public class Animal implements MakeVoice {
     private static int counter = 0;
     private final int id;
     private int age;
@@ -15,6 +17,7 @@ public class Animal {
         this.color = color;
     }
 
+    @Override
     public String getVoice() {
         return "Hello, ";
     }
@@ -46,4 +49,5 @@ public class Animal {
     public void setColor(String color) {
         this.color = color;
     }
+
 }

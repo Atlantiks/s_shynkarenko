@@ -1,6 +1,8 @@
 package homework6;
 
-public class Dog extends Domestic {
+import homework6.AnimalActions.Swimmable;
+
+public class Dog extends Domestic implements Swimmable {
 
     public Dog(int age, int weight, String color, String name, boolean isVaccinated) {
         super(age, weight, color, name, isVaccinated);
@@ -8,5 +10,10 @@ public class Dog extends Domestic {
 
     public String getVoice() {
         return super.getVoice() + "\nWoof\n";
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("Dog " + this.getName() + "swims");
     }
 }

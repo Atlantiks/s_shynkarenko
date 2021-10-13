@@ -9,10 +9,10 @@ public class TestCar {
 
     private static void testCar() {
         Scanner sc = new Scanner(System.in);
-        double liters = 0;
-        double fuelPrice = 0.0;
+        double liters;
+        double fuelPrice;
 
-        Car car = new Car("Odessa");
+        CarV9 car = new CarV9("Odessa");
         System.out.println(car);
         car.setTripDistance(0);
         System.out.printf("Одесса. В баке сейчас %.0f литров. Какая цена топлива? \n", car.getFuelInTank());
