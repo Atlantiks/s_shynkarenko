@@ -3,11 +3,8 @@ package homework2;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-// some comments..
-
 public class BankPercentage {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
         int termInYears = 0;
         long initialDeposit = 0;
@@ -60,7 +57,5 @@ public class BankPercentage {
 
         System.out.println("====================================");
         System.out.println(income / 100.0 + " UAH is your total income");
-
-
     }
 }
