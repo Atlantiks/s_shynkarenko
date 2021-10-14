@@ -30,13 +30,13 @@ public class LoginUtil {
         if (password.equals("")) {
             throw new WrongPasswordException("Password/Confirmed Password don't match each other.");
         } else if(!password.matches("[0-9A-Za-z_]{1,20}")) {
-            throw new WrongPasswordException("Incorrect Password");
+            throw new WrongPasswordException("Incorrect Password. Password may contain only latin letters, numbers and \"_\"");
         }
     }
 
     private static void isLoginValid(String login) throws WrongLoginException {
         if (!login.matches("[0-9A-Za-z_]{1,20}")) {
-            throw new WrongLoginException("Incorrect login");
+            throw new WrongLoginException("Incorrect login. Login may contain only latin letters, numbers and \"_\"");
         }
     }
 
