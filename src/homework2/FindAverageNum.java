@@ -7,7 +7,6 @@ public class FindAverageNum {
     public static void main(String[] args) {
         int primaryNum = 0;
         int secondaryNum = 0;
-
         Scanner sc = new Scanner(System.in);
 
         do {
