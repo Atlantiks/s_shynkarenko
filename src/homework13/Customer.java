@@ -1,13 +1,14 @@
 package homework13;
 
 public class Customer implements Runnable {
-    private Storage atm;
-    private String name;
+    private final Storage atm;
+    private final String name;
 
     Customer(Storage atm, String name) {
         this.atm = atm;
         this.name = name;
     }
+
     @Override
     public void run() {
         atm.addToCustomers(name);
@@ -24,6 +25,7 @@ public class Customer implements Runnable {
                 }
             }
         }
+        System.out.println("\u001B[34m" + name + " has completed all bank ops." + "\u001B[0m");
         atm.removeFromCustomers(name);
     }
 }

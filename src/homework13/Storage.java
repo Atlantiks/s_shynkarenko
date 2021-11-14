@@ -7,8 +7,8 @@ public class Storage {
     private int money;
     private int maxWithdrawalAllowed;
     private int maxTopUpAllowed;
-    private Set<String> customersInQueue = new HashSet<>();
-    private Set<String> customersHandled = new HashSet<>();
+    private final Set<String> customersInQueue = new HashSet<>();
+    private final Set<String> customersHandled = new HashSet<>();
 
     public Storage() {
         this.money = 0;
