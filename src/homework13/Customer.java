@@ -10,13 +10,19 @@ public class Customer implements Runnable {
     }
     @Override
     public void run() {
+        atm.addToCustomers(name);
         for (int i = 0; i < 100; i++) {
             int amount = (int)(Math.random() * 100);
             if (Math.random() >= 0.5) {
                 atm.addMoney(amount, this.name);
             } else {
-                atm.withdrawMoney(amount,this.name);
+                try {
+                    atm.withdrawMoney(amount,this.name);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
+        atm.removeFromCustomers(name);
     }
 }
