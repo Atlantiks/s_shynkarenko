@@ -12,7 +12,8 @@ public class Customer implements Runnable {
     @Override
     public void run() {
         atm.addToCustomers(name);
-        for (int i = 0; i < 100; i++) {
+        int i = 0;
+        for (; i < 50; i++) {
             try {
                 Thread.sleep((int)(Math.random() * 400));
             } catch (InterruptedException e) {
@@ -30,7 +31,7 @@ public class Customer implements Runnable {
                 }
             }
         }
-        System.out.println("\u001B[34m" + name + " has completed all bank ops." + "\u001B[0m");
+        System.out.println("\u001B[34m" + name + " has completed all (" + i + ")  bank ops." + "\u001B[0m");
         atm.removeFromCustomers(name);
     }
 }
