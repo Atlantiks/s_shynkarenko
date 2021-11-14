@@ -13,6 +13,11 @@ public class Customer implements Runnable {
     public void run() {
         atm.addToCustomers(name);
         for (int i = 0; i < 100; i++) {
+            try {
+                Thread.sleep((int)(Math.random() * 400));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             if (Math.random() >= 0.5) {
                 int amount = 1 + (int)(Math.random() * atm.getMaxTopUpAllowed());
                 atm.addMoney(amount, this.name);

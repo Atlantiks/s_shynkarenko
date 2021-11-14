@@ -11,7 +11,7 @@ public class TopUpATM implements Runnable{
     public void run() {
         while (atm.getNoOfActiveCustomers() != 0) {
             try {
-                Thread.sleep(3000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
