@@ -11,7 +11,9 @@ public class Storage {
     private final Set<String> customersHandled = new HashSet<>();
 
     public Storage() {
-        this.money = 0;
+        this.money = 100;
+        maxWithdrawalAllowed = 100;
+        maxTopUpAllowed = 100;
         getRemaining();
     }
 
