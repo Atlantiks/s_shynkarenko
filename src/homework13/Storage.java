@@ -5,6 +5,8 @@ import java.util.Set;
 
 public class Storage {
     private int money;
+    private int maxWithdrawalAllowed;
+    private int maxTopUpAllowed;
     private Set<String> customersInQueue = new HashSet<>();
     private Set<String> customersHandled = new HashSet<>();
 
@@ -13,8 +15,10 @@ public class Storage {
         getRemaining();
     }
 
-    public Storage(int money) {
-        this.money = money;
+    public Storage(int initialMoney, int maxWithdrawalAllowed, int maxTopUpAllowed) {
+        this.money = initialMoney;
+        this.maxWithdrawalAllowed = maxWithdrawalAllowed;
+        this.maxTopUpAllowed = maxTopUpAllowed;
         getRemaining();
     }
 
@@ -44,6 +48,14 @@ public class Storage {
     synchronized public int getRemaining() {
         System.out.println("ATM now holds " + money + "$");
         return this.money;
+    }
+
+    public int getMaxTopUpAllowed() {
+        return maxTopUpAllowed;
+    }
+
+    public int getMaxWithdrawalAllowed() {
+        return maxWithdrawalAllowed;
     }
 
     synchronized public int getCustomersInQueue() {

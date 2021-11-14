@@ -2,7 +2,7 @@ package homework13;
 
 public class Handler {
     public static void main(String[] args) {
-        Storage myATM = new Storage(100);
+        Storage myATM = new Storage(100,100,100);
         int numberOfCustomers = 2;
 
         for (int i = 1; i <= numberOfCustomers; i++) {
